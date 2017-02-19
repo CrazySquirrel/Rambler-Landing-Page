@@ -1,0 +1,75 @@
+@import "base";
+
+@media #{$media-phone-landscape} {
+  .page {
+    @include fontsize(10px);
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+      margin: 0;
+    }
+
+    &__header {
+      padding: 16px;
+    }
+
+    &__slide {
+      padding: 16px;
+    }
+
+    &__footer {
+      display: none;
+    }
+  }
+
+  .logotype {
+    &--header {
+      position: absolute;
+      width: 20px;
+
+      svg {
+        left: -120px;
+      }
+
+      path {
+        display: none;
+        float: left;
+      }
+
+      .logotype__AMP {
+        @include inline-block;
+      }
+    }
+
+    &--slide {
+      margin: 20px auto;
+
+      svg {
+        height: 40px;
+      }
+    }
+  }
+
+  .menu {
+    &__item {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .infographics {
+    display: none;
+  }
+
+  .button {
+    margin: 10px auto 0 auto;
+
+    &--lead{
+      display: none;
+    }
+  }
+}
+

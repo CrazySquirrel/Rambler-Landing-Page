@@ -1,0 +1,186 @@
+@import "base";
+
+.form {
+  margin: 0 auto;
+
+  &__raw {
+    opacity: 1;
+    @include transition-timing-function(ease);
+    @include transition-property(opacity);
+    @include transition-duration(.2s);
+  }
+
+  &__success {
+    margin: 1em 0;
+    @include fontsize(150%);
+    color: lime;
+    opacity: 0;
+    @include transition-timing-function(ease);
+    @include transition-property(opacity);
+    @include transition-duration(.2s);
+  }
+
+  &__file-input {
+    position: absolute;
+    left: -10000px;
+
+    & + .form__file-label {
+      @include box-sizing(border-box);
+      @include fontsize(125%);
+      line-height: 1;
+      background: none;
+      outline: none;
+      border: none;
+      color: #ffffff;
+      position: relative;
+      z-index: 3;
+      width: auto;
+      @include inline-block;
+      padding: 16px 0;
+      text-align: left;
+      cursor: pointer;
+      @include transition-timing-function(ease);
+      @include transition-property(color);
+      @include transition-duration(.2s);
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+      }
+
+      &:after {
+        background: #ffffff;
+        z-index: 1;
+      }
+
+      &:before {
+        z-index: 2;
+        background: orange;
+        width: 0;
+        left: 50%;
+        @include transition-timing-function(ease);
+        @include transition-property(width, left, background);
+        @include transition-duration(.2s);
+      }
+
+      &:hover {
+        color: orange;
+
+        &:before {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+
+    &--focus {
+      & + .form__file-label {
+        color: orange;
+
+        &:before {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+
+    &--error {
+      & + .form__file-label {
+        color: red;
+        font-weight: bold;
+        @include animation(shake 0.82s cubic-bezier(.36, .07, .19, .97) both);
+        @include transform(translate3d(0, 0, 0));
+        @include backface-visibility(hidden);
+        @include perspective(1000px);
+
+        &:before {
+          background: red;
+          width: 100%;
+          left: 0;
+        }
+
+        &:hover {
+          color: red;
+
+          &:before {
+            background: red;
+          }
+        }
+      }
+    }
+
+    &--sending {
+      & + .form__file-label {
+        color: #02b3e4;
+
+        &:before {
+          background: #02b3e4;
+          width: 100%;
+          left: 0;
+        }
+
+        &:hover {
+          color: #02b3e4;
+
+          &:before {
+            background: #02b3e4;
+          }
+        }
+      }
+    }
+
+    &--done {
+      & + .form__file-label {
+        color: lime;
+
+        &:before {
+          background: lime;
+          width: 100%;
+          left: 0;
+        }
+
+        &:hover {
+          color: lime;
+
+          &:before {
+            background: lime;
+          }
+        }
+      }
+    }
+  }
+
+  &--done {
+    .form__raw {
+      opacity: 0;
+    }
+
+    .form__success {
+      opacity: 1;
+    }
+  }
+}
+
+@include keyframes(shake) {
+  10%, 90% {
+    @include transform(translate3d(-1px, 0, 0));
+  }
+
+  20%, 80% {
+    @include transform(translate3d(2px, 0, 0));
+  }
+
+  30%, 50%, 70% {
+    @include transform(translate3d(-4px, 0, 0));
+  }
+
+  40%, 60% {
+    @include transform(translate3d(4px, 0, 0));
+  }
+}

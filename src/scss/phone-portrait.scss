@@ -1,0 +1,116 @@
+@import "base";
+
+@media #{$media-phone-portrait} {
+  .page {
+    @include fontsize(11px);
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
+      margin: 0;
+    }
+
+    &__header{
+      padding: 16px;
+    }
+
+    &__slide {
+      padding: 16px;
+    }
+  }
+
+  .logotype {
+    &--header {
+      width: 20px;
+
+      svg {
+        left: -120px;
+      }
+
+      path {
+        display: none;
+        float: left;
+      }
+
+      .logotype__AMP {
+        @include inline-block;
+      }
+    }
+
+    &--slide {
+      margin: 20px auto;
+
+      svg {
+        height: 30px;
+      }
+    }
+  }
+
+  .menu {
+    margin: 5px 0 0 0;
+
+    &__item {
+      line-height: 5px;
+      margin: 0 0 0 20px;
+
+      a {
+        font-size: 0;
+        width: 20px;
+        height: 10px;
+        background: #ffffff;
+
+        &:after {
+          bottom: 0;
+          width: 0;
+          height: 100%;
+          background: #02b3e4;
+          @include transition-property(width, opacity);
+        }
+
+        &:hover {
+          &:after {
+            width: 100%;
+            bottom: 0;
+            opacity: 1;
+          }
+        }
+      }
+
+      &--active {
+        a {
+          &:after {
+            width: 100%;
+            bottom: 0;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .infographics {
+    @include flex-direction(column);
+
+    &__number,
+    &__meaning {
+      padding: 8px;
+    }
+
+    &__number {
+      font-size: 2em;
+      @include flex(2 0);
+    }
+
+    &__meaning {
+      @include flex(3 0);
+      line-height: 2;
+    }
+  }
+
+  .button{
+    margin: 10px auto 0 auto;
+  }
+}

@@ -1,0 +1,233 @@
+doctype html
+html(lang=`${lang}`, itemscope="", itemtype="http://schema.org/Article")
+    head
+        meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+
+        meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui")
+
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="mobile-web-app-capable", content="yes")
+
+        meta(name="apple-mobile-web-app-status-bar-style", content="black-transparent")
+
+        meta(name="keywords", content=`${keywords}`)
+        meta(name="description", content=`${description}`)
+        meta(name="author", content=`${author}`)
+
+        link(rel="apple-touch-icon", sizes="180x180", href="/jobs/javascript-developer/images/icons/apple-touch-icon.png?v=vMrpXPjlKk")
+        link(rel="icon", type="image/png", href="/jobs/javascript-developer/images/icons/favicon-32x32.png?v=vMrpXPjlKk", sizes="32x32")
+        link(rel="icon", type="image/png", href="/jobs/javascript-developer/images/icons/android-chrome-192x192.png?v=vMrpXPjlKk", sizes="192x192")
+        link(rel="icon", type="image/png", href="/jobs/javascript-developer/images/icons/favicon-16x16.png?v=vMrpXPjlKk", sizes="16x16")
+        link(rel="manifest", href="/jobs/javascript-developer/images/icons/manifest.json?v=vMrpXPjlKk")
+        link(rel="mask-icon", href="/jobs/javascript-developer/images/icons/safari-pinned-tab.svg?v=vMrpXPjlKk", color="#5bbad5")
+        link(rel="shortcut icon", href="/jobs/javascript-developer/images/icons/favicon.ico?v=vMrpXPjlKk")
+
+        meta(name="apple-mobile-web-app-title", content="Rambler&amp;Co")
+        meta(name="application-name", content="Rambler&amp;Co")
+        meta(name="msapplication-TileColor", content="#000000")
+        meta(name="msapplication-TileImage", content="/jobs/javascript-developer/images/icons/mstile-144x144.png?v=vMrpXPjlKk")
+        meta(name="msapplication-config", content="/jobs/javascript-developer/images/icons/browserconfig.xml?v=vMrpXPjlKk")
+        meta(name="theme-color", content="#ffffff")
+
+        meta(itemprop="name", content=`${title}`)
+        meta(itemprop="description", content=`${description}`)
+
+        each share_image in share_images
+            meta(itemprop="image", content=`${share_image}`)
+
+        meta(property="og:title", content=`${title}`)
+        meta(property="og:description", content=`${description}`)
+        meta(property="og:type", content="website")
+        meta(property="og:url", content=`${url}`)
+        meta(property="og:updated_time", content=`${modified}`)
+
+        each share_image in share_images
+            meta(property="og:image", content=`${share_image}`)
+
+        meta(name="twitter:card", content="summary_large_image")
+        meta(name="twitter:site", content=`@${name}`)
+        meta(name="twitter:creator", content=`@${name}`)
+        meta(name="twitter:title", content=`${title}`)
+        meta(name="twitter:description", content=`${description}`)
+
+        each share_image in share_images
+            meta(name="twitter:image", content=`${share_image}`)
+
+        meta(property="article:published_time", content=`${modified}`)
+        meta(property="article:modified_time", content=`${modified}`)
+        meta(property="article:section", content=`${title}`)
+        meta(property="article:tag", content=`${title}`)
+
+        meta(last-modified=`${modified}`)
+
+        title
+            | #{title}
+
+        style
+            include ../../dist/css/before.css
+    body(itemscope="", itemtype="http://schema.org/Product", cz-shortcut-listen="true")
+        section(class="page")
+            header(class="page__header")
+                span(class="logotype logotype--header")
+                    include ../images/logotype.svg
+                nav(class="menu")
+                    ul
+                        li(class="menu__item menu__item--active")
+                            a(href="#about")
+                                | Мы
+                        li(class="menu__item")
+                            a(href="#position")
+                                | Ищем
+                        li(class="menu__item")
+                            a(href="#responsibilities")
+                                | Работа
+                        li(class="menu__item")
+                            a(href="#requirements")
+                                | Надо
+                        li(class="menu__item")
+                            a(href="#offer")
+                                | Даем
+                        li(class="menu__item")
+                            a(href="#form")
+                                | Хочу
+            main(class="page__main")
+                section(class="page__slide page__slide--about", id="about")
+                    div(class="page__slide-content")
+                        dl(class="infographics")
+                            span(class="infographics__item")
+                                dt(class="infographics__number")
+                                    | 42
+                                dd(class="infographics__meaning")
+                                    | млн&nbsp;человек
+                                    | месячная&nbsp;аудитория
+                                    | (&nbsp;TNS&nbsp;Web&nbsp;Index&nbsp;с&nbsp;учетом
+                                    | мобильной&nbsp;аудитории&nbsp;)
+                            span(class="infographics__item")
+                                dt(class="infographics__number")
+                                    | 35+
+                                dd(class="infographics__meaning")
+                                    | количество&nbsp;изданий,
+                                    | сервисов&nbsp;и&nbsp;проектов
+                            span(class="infographics__item")
+                                dt(class="infographics__number")
+                                    | 1700+
+                                dd(class="infographics__meaning")
+                                    | человек
+                                    | в&nbsp;хорошей&nbsp;компании
+                        span(class="logotype logotype--slide")
+                            include ../images/logotype.svg
+                        a(href="#form", class="button button--lead")
+                            span
+                                | Устроиться&nbsp;на&nbsp;работу
+                section(class="page__slide page__slide--position", id="position")
+                    div(class="page__slide-content")
+                        h1
+                            | Разыскивается JavaScript&nbsp;Developer
+                        p
+                            | от&nbsp;80&nbsp;000&nbsp;до&nbsp;150&nbsp;000&nbsp;<span class="rub"><span>&#8381;</span></span>
+                            | в&nbsp;Рамблер&nbsp;Рекламные&nbsp;Технологии&nbsp;в&nbsp;Москве.
+                        a(href="#form", class="button button--lead")
+                            span
+                                | Устроиться&nbsp;на&nbsp;работу
+                section(class="page__slide page__slide--responsibilities", id="responsibilities")
+                    div(class="page__slide-content")
+                        h2
+                            | Мы ищим разработчика, который умеет:
+                        ul
+                            li
+                                | Разрабатывать highload (100k rps) клиентскую часть проекта с&nbsp;использованием: TypeScript, модульного тестирования, CI;
+                            li
+                                | Оптимизировать существующую многолетнюю кодовую базу;
+                            li
+                                | Программировать. Ни&nbsp;какой верстки, UI/UX;
+                            li
+                                | Автоматизировать процесса разработки и&nbsp;выкладки готовых решений (gitlab&nbsp;ci, jenkins);
+                            li
+                                | Соблюдать чистоту кода (tslint);
+                            li
+                                | Документировать реализуемые решения (gitbook, jsdoc).
+                        a(href="#form", class="button button--lead")
+                            span
+                                | Устроиться&nbsp;на&nbsp;работу
+                section(class="page__slide page__slide--requirements", id="requirements")
+                    div(class="page__slide-content")
+                        h2
+                            | От&nbsp;Вас требуется:
+                        ul
+                            li
+                                | Опыт написания на&nbsp;чистом JavaScript;
+                            li
+                                | Опыт профилирования и&nbsp;отладки кода;
+                            li
+                                | Опыт работы с&nbsp;системами контроля версий (GIT, gitflow).
+                        h3
+                            | Будет плюсом знать:
+                        ul
+                            li
+                                | TypeScript;
+                            li
+                                | Node.js;
+                            li
+                                | Опыт разработки высоконагруженных приложений.
+                        a(href="#form", class="button button--lead")
+                            span
+                                | Устроиться&nbsp;на&nbsp;работу
+                section(class="page__slide page__slide--offer", id="offer")
+                    div(class="page__slide-content")
+                        h2
+                            | Мы&nbsp;предлагаем:
+                        ul
+                            li
+                                | Работу над высоконагруженным технологичным проектом;
+                            li
+                                | Возможность расти и&nbsp;развиваться вместе с&nbsp;нами: принимать участие как во&nbsp;внутренних проектах по&nbsp;обучению (лекции, тренинги), так и&nbsp;во&nbsp;внешних;
+                            li
+                                | Гибкую разработку с&nbsp;применением лучших практик и&nbsp;инструментов;
+                            li
+                                | Соблюдение требований ТК&nbsp;РФ;
+                            li
+                                | Чай/кофе, печенье и&nbsp;другие вкусности в&nbsp;свободном доступе;
+                            li
+                                | Офис в&nbsp;пешей доступности от&nbsp;м.&nbsp;Тульская.
+                        a(href="#form", class="button button--lead")
+                            span
+                                | Устроиться&nbsp;на&nbsp;работу
+                section(class="page__slide page__slide--form", id="form")
+                    div(class="page__slide-content")
+                        h2
+                            | Устроиться в&nbsp;хорошую компанию:
+                        div(class="form", id="cv-form")
+                            div(class="form__raw form__raw--file")
+                                input(type="file", accept="application/pdf", class="form__file-input", id="cv")
+                                label(class="form__file-label", for="cv")
+                                    | &#128206; &nbsp; Прикрепить файл с рэзюме (pdf)
+                            div(class="form__success")
+                                | &#10003; &nbsp; Ваше рэзюме принято
+            footer(class="page__footer")
+                div(class="share-buttons")
+                    div(class="share-buttons__items share-buttons__items--vkontakte", data-type="vkontakte")
+                    div(class="share-buttons__items share-buttons__items--odnoklassniki", data-type="odnoklassniki")
+                    div(class="share-buttons__items share-buttons__items--facebook", data-type="facebook")
+                    div(class="share-buttons__items share-buttons__items--twitter", data-type="twitter")
+                    div(class="share-buttons__items share-buttons__items--google", data-type="google")
+        style
+            include ../../dist/css/after.css
+            include ../../dist/css/phone-portrait.css
+            include ../../dist/css/phone-landscape.css
+            include ../../dist/css/tablet-portrait.css
+            include ../../dist/css/tablet-landscape.css
+            include ../../dist/css/desktop-base.css
+            include ../../dist/css/desktop-big.css
+            include ../../dist/css/desktop-large.css
+            include ../../dist/css/desktop-huge.css
+            include ../../dist/css/desktop-imac.css
+            include ../../dist/css/print.css
+
+        script(type="text/javascript", src="/jobs/javascript-developer/js/global.js", async, defer)
+
+        div(class="share-meta-tags")
+            if share_image
+                each share_image in share_images
+                    img(itemprop="image", src=`${share_image}`)
+            p(itemprop="description")
+                | #{description}

@@ -1,0 +1,15 @@
+.idea
+node_modules
+doc
+cv
+dist
+ssl
+typings
+*.log
+*.DS_Store
+*.tmp
+*.tmp.json
+*.tmp.pug
+*.lock
+.sass-cache
+server.config.json

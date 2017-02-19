@@ -1,0 +1,53 @@
+@import "base";
+
+@media #{$media-tablet-portrait} {
+  .page {
+    &__header {
+      padding: 30px;
+    }
+
+    &__slide {
+      padding: 30px;
+    }
+  }
+
+  .logotype {
+    &--slide {
+      svg {
+        height: 60px;
+      }
+    }
+  }
+
+  .menu {
+    &__item {
+      margin: 0 0 0 20px;
+    }
+  }
+
+  .infographics {
+    max-width: 650px;
+
+    &__item {
+      @include flex-direction(column);
+
+      &:first-child {
+        @include flex(1.25 0);
+      }
+    }
+
+    &__number,
+    &__meaning {
+      padding: 4px;
+    }
+
+    &__number {
+      @include flex(1 0);
+      text-align: left;
+    }
+
+    &__meaning {
+      @include flex(1 0);
+    }
+  }
+}

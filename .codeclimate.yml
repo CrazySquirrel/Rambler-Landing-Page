@@ -1,0 +1,27 @@
+engines:
+  duplication:
+      enabled: true
+      config:
+        languages:
+        - javascript:
+  eslint:
+      enabled: true
+  fixme:
+      enabled: true
+  nodesecurity:
+      enabled: true
+  markdownlint:
+      enabled: true
+ratings:
+  paths:
+  - src/**
+exclude_paths:
+  - typings
+  - dist
+  - ssl
+  - cv
+  - .sass-cache
+  - "**.js"
+  - "**.json"
+  - "**.log"
+  - "**.yml"

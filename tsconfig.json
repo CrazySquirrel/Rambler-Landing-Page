@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "sourceMap": false,
+    "inlineSourceMap": true
+  },
+  "paths": {
+    "AnimationFrame": [
+      "./node_modules/AnimationFrame/lib/AnimationFrame.ts"
+    ],
+    "CSDebug": [
+      "./node_modules/CSDebug/lib/CSDebug.ts"
+    ],
+    "CSLogger": [
+      "./node_modules/CSLogger/lib/CSLogger.ts"
+    ],
+    "EverCookie": [
+      "./node_modules/EverCookie/lib/EverCookie.ts"
+    ],
+    "UserID": [
+      "./node_modules/UserID/lib/UserID.ts"
+    ],
+    "Utils": [
+      "./node_modules/Utils/lib/Utils.ts"
+    ],
+    "UtilsBrowser": [
+      "./node_modules/Utils/lib/UtilsBrowser.ts"
+    ],
+    "ViewAbility": [
+      "./node_modules/ViewAbility/lib/ViewAbility.ts"
+    ]
+  },
+  "files": [
+    "./src/ts/client/global.ts",
+    "./src/ts/server/server.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "typings"
+  ]
+}
