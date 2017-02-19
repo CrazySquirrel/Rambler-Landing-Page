@@ -1,0 +1,19 @@
+{
+  "apps": [
+    {
+      "name": "Rambler&Co Landing Page",
+      "script": "./server.js",
+      "instances": "max",
+      "exec_mode": "cluster",
+      "watch": false,
+      "cwd": ".",
+      "env": {
+      },
+      "error_file": "err.log",
+      "out_file": "out.log",
+      "merge_logs": true,
+      "log_type": "json",
+      "log_date_format": "YYYY-MM-DD HH:mm Z"
+    }
+  ]
+}

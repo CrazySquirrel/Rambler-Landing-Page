@@ -77,7 +77,13 @@ const REPLACER = {
   ]
 };
 
-let settings = require("./server.config.json");
+let settings;
+
+if (fs.existsSync("./server.config.json")) {
+  settings = require("./server.config.json");
+} else {
+  settings = require("./server.config.example.json");
+}
 
 for (let setting in settings.apps[0].env) {
   if (settings.apps[0].env.hasOwnProperty(setting)) {
@@ -97,8 +103,8 @@ module.exports = {
     sourceMapFilename: "[name].map.js",
     filename: "[name].js",
   },
-  devtool: (NODE_ENV == "development" ? "inline-source-map" : (NODE_ENV
-  == "testing" ? "inline-source-map" : "source-map")),
+  devtool: (NODE_ENV === "development" ? "inline-source-map" : (NODE_ENV
+  === "testing" ? "inline-source-map" : "source-map")),
   plugins: arrPlugins,
   resolve: {
     extensions: ["", ".webpack.js", ".web.js", ".ts", ".tsx", ".js"],
