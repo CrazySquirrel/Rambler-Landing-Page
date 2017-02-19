@@ -20,6 +20,8 @@ exclude_paths:
   - dist
   - ssl
   - cv
+  - src/fonts
+  - src/images
   - .sass-cache
   - "**.js"
   - "**.json"
